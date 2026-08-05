@@ -1,39 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Pepsi Universe</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pepsi Universe ✨</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    overflow:hidden;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#17002c,#2f005f,#000428);
+    position:relative;
+}
+
+/* Stars */
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+    radial-gradient(white 1px,transparent 1px),
+    radial-gradient(white 2px,transparent 2px);
+    background-size:70px 70px,140px 140px;
+    animation:moveStars 60s linear infinite;
+    opacity:.6;
+}
+
+@keyframes moveStars{
+    from{transform:translateY(0);}
+    to{transform:translateY(400px);}
+}
+
+/* Floating hearts */
+
+.heart{
+    position:absolute;
+    bottom:-50px;
+    color:#ff69b4;
+    animation:float 12s linear infinite;
+    opacity:.7;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(0) scale(.5);
+    }
+    to{
+        transform:translateY(-120vh) scale(1.5);
+    }
+}
+
+.card{
+    width:92%;
+    max-width:380px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:30px;
+    padding:35px;
+    text-align:center;
+    color:white;
+    z-index:10;
+    box-shadow:0 0 60px rgba(255,0,255,.3);
+}
+
+h1{
+    font-size:40px;
+    margin-bottom:10px;
+    background:linear-gradient(90deg,#ffb3ff,#8bd3ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+p{
+    color:#ddd;
+    margin-bottom:25px;
+    line-height:1.6;
+}
+
+input{
+    width:100%;
+    padding:16px;
+    border:none;
+    outline:none;
+    border-radius:15px;
+    background:#ffffff18;
+    color:white;
+    font-size:18px;
+    text-align:center;
+}
+
+button{
+    margin-top:18px;
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
+    background:linear-gradient(90deg,#ff4fd8,#7d5cff);
+    color:white;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.04);
+    box-shadow:0 0 25px hotpink;
+}
+
+#msg{
+    margin-top:20px;
+    min-height:35px;
+    font-weight:bold;
+}
+
+.loader{
+    display:none;
+    margin-top:20px;
+}
+
+.bar{
+    height:12px;
+    width:100%;
+    border-radius:50px;
+    background:#ffffff25;
+    overflow:hidden;
+}
+
+.fill{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,#00f2ff,#ff4fd8);
+    animation:load 2.2s forwards;
+}
+
+@keyframes load{
+    to{width:100%;}
+}
+</style>
+
 </head>
 <body>
-<canvas id="stars"></canvas>
 
-<div id="loader">
-  <div class="loader-ring"></div>
-  <h1>Pepsi Universe ✨</h1>
-  <p>glitter loading...</p>
+<div class="card">
+
+<h1>Pepsi Universe ✨</h1>
+
+<p>
+Only one special person can enter this universe 💜
+</p>
+
+<input id="pass" type="password" placeholder="Enter Secret Password">
+
+<button onclick="checkPassword()">
+Unlock ❤️
+</button>
+
+<div id="msg"></div>
+
+<div class="loader" id="loader">
+
+<p>Authenticating...</p>
+
+<div class="bar">
+<div class="fill"></div>
 </div>
 
-<nav>
-  <b>PEPSI ✨</b>
-  <button id="menu">☰</button>
-  <div id="navLinks"><a href="index.html">Home</a><a href="cricket.html">Cricket Zone</a><a href="biryani.html">Biryani Page</a><a href="dhoni.html">Dhoni Fan Page</a><a href="gallery.html">Gallery</a><a href="about.html">ABOUT U CHLO</a><a href="final.html">Final Surprise</a></div>
-</nav>
+</div>
 
+</div>
 
-<main class="screen hero">
-  <div class="orb orb1"></div><div class="orb orb2"></div>
-  <section class="glass hero-box reveal">
-    <p class="tag">ONLY FOR PEPSI KUTTY 🤏</p>
-    <h1>Happy Birthday<br><span>Pepsi ✨</span></h1>
-    <p>A full glitter universe made for cricket queen, biryani lover and Dhoni fan 🏏🍗</p>
-    <img class="hero-img" src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=900&q=80" alt="cricket stadium">
-    <a class="btn" href="cricket.html">Start Website 🎉</a>
-  </section>
-</main>
+<script>
 
+for(let i=0;i<35;i++){
 
-<script src="script.js"></script>
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="💖";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.fontSize=(18+Math.random()*20)+"px";
+
+h.style.animationDelay=Math.random()*12+"s";
+
+document.body.appendChild(h);
+
+}
+
+function checkPassword(){
+
+const password="fantaxpepsi3024";
+
+const input=document.getElementById("pass").value.trim();
+
+const msg=document.getElementById("msg");
+
+if(input===password){
+
+msg.style.color="#9dff9d";
+
+msg.innerHTML="✨ Welcome Pepsi Kutty 🤏<br>Opening your universe...";
+
+document.getElementById("loader").style.display="block";
+
+setTimeout(()=>{
+
+window.location.href="home.html";
+
+},2500);
+
+}else{
+
+msg.style.color="#ff9c9c";
+
+msg.innerHTML="❌ Oii Kutty 😂<br>Password wrong... Think pannuuu 🤏";
+
+}
+
+}
+
+</script>
+
 </body>
 </html>
