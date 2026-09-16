@@ -18,19 +18,29 @@
 <nav>
   <b>PEPSI ✨</b>
   <button id="menu">☰</button>
-  <div id="navLinks"><a href="index.html">Home</a><a href="cricket.html">Cricket Zone</a><a href="biryani.html">Biryani Page</a><a href="dhoni.html">Dhoni Fan Page</a><a href="gallery.html">Gallery</a><a href="about.html">ABOUT U CHLO</a><a href="final.html">Final Surprise</a></div>
+  <div id="navLinks">
+    <a href="home.html">Home</a>
+    <a href="cricket.html">Cricket Zone</a>
+    <a href="biryani.html">Biryani Page</a>
+    <a href="dhoni.html">Dhoni Fan Page</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">ABOUT U CHLO</a>
+    <a href="final.html">Final Surprise</a>
+  </div>
 </nav>
-
 
 <main class="screen final">
   <section class="final-box reveal">
     <h1>Happy Birthday Pepsi ✨</h1>
     <p>Now go eat biryani and smile properly 😂🍗</p>
-    <button id="blast">GLITTER BLAST 🎉</button>
-    <a class="btn" href="index.html">Back Home</a>
+    
+    <div class="button-group" style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 15px;">
+      <button id="blast" class="btn glitter-btn" onclick="triggerGlitter()">GLITTER BLAST 🎉</button>
+      <a href="memories.html" class="btn finale-btn">One Last Surprise... 🎵📸</a>
+      <a href="home.html" class="btn home-btn">Back Home</a>
+    </div>
   </section>
 </main>
-
 
 <script src="script.js"></script>
 </body>
