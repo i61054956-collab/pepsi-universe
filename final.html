@@ -5,6 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Final Surprise | Pepsi Universe</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .button-group-container {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .btn-surprise {
+      background: linear-gradient(135deg, #ff4081 0%, #7c4dff 100%) !important;
+      color: #ffffff !important;
+      padding: 10px 18px !important;
+      border-radius: 25px !important;
+      text-decoration: none !important;
+      font-weight: 600 !important;
+      font-size: 0.95rem !important;
+      box-shadow: 0 0 15px rgba(255, 64, 129, 0.6) !important;
+      display: inline-block !important;
+      border: none !important;
+      cursor: pointer !important;
+      transition: transform 0.2s ease !important;
+    }
+    .btn-surprise:hover {
+      transform: scale(1.05) !important;
+    }
+  </style>
 </head>
 <body>
 <canvas id="stars"></canvas>
@@ -34,10 +61,10 @@
     <h1>Happy Birthday Pepsi ✨</h1>
     <p>Now go eat biryani and smile properly 😂🍗</p>
     
-    <div class="button-group" style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 15px;">
-      <button id="blast" class="btn glitter-btn" onclick="triggerGlitter()">GLITTER BLAST 🎉</button>
-      <a href="memories.html" class="btn finale-btn">One Last Surprise... 🎵📸</a>
-      <a href="home.html" class="btn home-btn">Back Home</a>
+    <div class="button-group-container">
+      <button id="blast" class="btn">GLITTER BLAST 🎉</button>
+      <a href="memories.html" class="btn-surprise">One Last Surprise... 🎵📸</a>
+      <a class="btn" href="home.html">Back Home</a>
     </div>
   </section>
 </main>
